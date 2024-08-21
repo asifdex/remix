@@ -1,0 +1,117 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_idx",
+						"type": "uint256"
+					}
+				],
+				"name": "getStore",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "newContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "simpleStorageArray",
+				"outputs": [
+					{
+						"internalType": "contract SimpleStorages",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_idx",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_number",
+						"type": "uint256"
+					}
+				],
+				"name": "storeContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/pratice solidity/NewSimpleContract.sol": "NewSimpleStorage"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/pratice solidity/NewSimpleContract.sol": {
+			"keccak256": "0x3c60c06a97a5ec3714adb333f6fc2de7b9fad2e0dd87273595afa60a943db04c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://90ec5a0e03374058d3cc54c7277a26550f80869acdcc71c1810b8b0e40c7a848",
+				"dweb:/ipfs/QmcjUXGP9Ckm5uEe85REGA3bmxcdu8DRK8NXnjftLgorYy"
+			]
+		},
+		"contracts/pratice solidity/SimpleStorage.sol": {
+			"keccak256": "0x9192dc992a193cf7ff4bf36dfd04cfbf85345b97a92bbfb284e43306e4fafbaf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://52a93e22216b11dce5023703e9b85bc5cc30340a7b81d115c08e95b084224cae",
+				"dweb:/ipfs/QmbtsZdqsG1cVwqTjwLntiFwKSu5Q1yYHhfv28qyp4zbGQ"
+			]
+		}
+	},
+	"version": 1
+}

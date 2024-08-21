@@ -1,18 +1,22 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.21;
-import "contracts/PriceConverter.sol";
+pragma solidity ^0.8.0;
+import "./02-PriceConvertor.sol";
 
-error fundme();
+
 
 contract FundMe {
+    // using PriceConverter for uint256;
     uint256 public minUsd = 1 * 1e18;
     uint256 public result;
     address[] public funders;
     mapping(address => uint256) public addressToValue;
     address public owner;
+    AggregatorV3Interface public priceFeed;
 
-    constructor() {
+    constructor(address _priceFeed) {
         owner = msg.sender;
+        priceFeed=AggregatorV3Interface(_priceFeed);
+        
     }
 
     modifier onlyOwner() {
@@ -22,7 +26,7 @@ contract FundMe {
 
     function fund() public payable {
         require(
-            PriceConverter.getConversionRate(msg.value) > minUsd,
+            PriceConverter.getConversionRate(msg.value,priceFeed) > minUsd,
             "don't have enogh gas"
         );
         funders.push(msg.sender);
@@ -37,7 +41,7 @@ contract FundMe {
         // reset array
         funders = new address[](0);
 
-        (bool sucess, ) = owner.call{value: address(this).balance}("");
+        (bool sucess, /** function here  */) = owner.call{value: address(this).balance}("");
         require(sucess, "failed withdraw");
     }
 
